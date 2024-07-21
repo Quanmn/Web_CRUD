@@ -3,17 +3,38 @@
 <html>
 <head>
     <title>Login</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <form method="POST" action="login.php" class="Login">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <input type="submit" value="Login" name="Login">
-    </form>
+    <div class="container">
+    <form action="login.php" method="POST">
+  <div class="form-group">
+    <label for="username"><b>Username:</b></label>
+    <input type="text" class="form-control" placeholder="Enter username" id="username" name="username">
+  </div>
+  <div class="form-group">
+    <label for="pwd"><b>Password:</b></label>
+    <input type="password" class="form-control" name="password" placeholder="Enter password" id="pwd">
+  </div>
+  <div class="form-group form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox"> Remember me
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary" name="login">Login</button>
+  <a href="register.php" class="btn btn-success">Register</a>
+</form>
+    </div> 
 </body>
 </html>
 <?php
