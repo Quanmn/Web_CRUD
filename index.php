@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="container">
-    <form action="login.php" method="POST">
+    <form action="index.php" method="POST">
   <div class="form-group">
     <label for="username"><b>Username:</b></label>
     <input type="text" class="form-control" placeholder="Enter username" id="username" name="username">
@@ -26,12 +26,7 @@
     <label for="pwd"><b>Password:</b></label>
     <input type="password" class="form-control" name="password" placeholder="Enter password" id="pwd">
   </div>
-  <div class="form-group form-check">
-    <label class="form-check-label">
-      <input class="form-check-input" type="checkbox"> Remember me
-    </label>
-  </div>
-  <button type="submit" class="btn btn-primary" name="login">Login</button>
+  <button type="submit" class="btn btn-primary" name="Login">Login</button>
   <a href="register.php" class="btn btn-success">Register</a>
 </form>
     </div> 
@@ -54,9 +49,9 @@ if (isset($_POST['Login'])) {
         # Lấy mật khẩu trong db ra
         $row = mysqli_fetch_array($result);
         if (!$row) {
-            echo "<br><br>Tên đăng nhập không tồn tại.";
+            echo '<script language="javascript">alert("Tên đăng nhập không tồn tại."); window.location = "index.php";</script>';
         } else if ($password != $row['password']) {
-            echo "<br><br>Mật khẩu không đúng. Vui lòng nhập lại.";
+            echo '<script language="javascript">alert("Mật khẩu không đúng. Vui lòng nhập lại."); window.location = "index.php";</script>';
         }else{
             // Đăng nhập thành công
             $_SESSION['username'] = $username; // Lưu tên người dùng vào session
